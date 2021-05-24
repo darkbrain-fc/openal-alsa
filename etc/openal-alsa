@@ -1,0 +1,29 @@
+#
+#	Device configuration file	
+#		device <alsa device>			
+#		channels <n of channels>
+#		[devices] <n of devices>  force to use these devices: needed for dmix users
+#
+#	examples:
+#
+#	STEREO:
+#
+#	device hw:0		
+#	channels 2		
+#
+#	SURROUND:
+#
+#	device surround40
+#	channels 4
+#
+#	DMIX plugin:
+#
+#	device	dmixer		#	.asoundrc :    pcm.dmixer {    type dmix
+#	channles 2
+#	devices 64
+#
+#	
+device surround40
+channels 4
+#devices 64
+

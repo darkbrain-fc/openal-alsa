@@ -1,0 +1,28 @@
+The error:
+
+ALSA lib pcm_hw.c:324:(snd_pcm_hw_hw_params) SNDRV_PCM_IOCTL_HW_PARAMS failed: Cannot allocate memory
+
+can be safely ignored in most cases.  It is just the application trying to
+allocate more sources than there are free hardware resources to accommodate.
+
+This library can provide at most 21 sources.  It may be more in the future.
+Less sources will the available if another application is doing audio playback.
+
+If you are using UT2004 you can suppress this message most of the time by
+modifying your ~/.ut2004/System/UT2004.ini as follows:
+
+[ALAudio.ALAudioSubsystem]
+Channels=20
+
+
+
+If on a Soundblaster Live, in your ~/.openal-speakers you have volumes set
+for any more than the first two speakers you should manually zero the
+following mixer controls:
+
+Wave Surround Playback Volume
+Wave Center Playback Volume
+Wave LFE Playback Volume
+
+You may not need to do this on an Audigy or Audigy2 but I've not been able to
+test that.

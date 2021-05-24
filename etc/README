@@ -1,0 +1,95 @@
+NEWS:
+
+This directory contains example of openal-alsa configuration file.
+To use it simple copy openal-alsa to $HOME/.openal-alsa
+
+For the format open it and read instructions
+
+SPEAKERS:
+
+This directory contains example speaker configuration files.
+To use one simple copy it to $HOME/.openal-speakers
+
+The format is simple:
+
+<n>: <gain> <x> <y> <z>
+
+where <n> is a number indication which speaker:
+
+0: front left
+1: front right
+2: rear left
+3: rear right
+4: center
+5: lfe
+6: side left
+7: side right
+
+<gain> is a per speaker gain control between 0.0 and 1.0.
+Setting the gain to 0.0 disables output to the speaker.
+
+<x> <y> <z> is the speaker position.
+<x> is forward, <y> is up and <z> is to the right.
+Only the direction of this vector is used.
+
+Anything after a "#" is considered a comment.
+
+speakers-mono:
+
+	This one is just simple example.
+
+speakers-stereo:
+
+	This is the default configuration.  If you are going to use this
+you may as well not bother with a speakers file.
+
+speakers-quadraphonic:
+
+	Fourpoint output.  Each speaker placed in different corner of a square.
+
+speakers-fivepoint-a:
+
+	This is what I'm told is the correct placement of speakers in a 5.1 
+setup.  The front speakers are 30° from the center speaker and the rear
+speakers are 110° from the center speaker.  This is very front biased.
+Due to they way I calculate the speaker gain/volume sound behind you ends up
+being very quiet.  I know there are schemes I could use that would allow for
+this but they don't seems to cope very well with the lack of above of below
+speakers.
+
+speakers-fivepoint-b:
+
+	This is the five speakers placed evenly around the listener, such
+that they are all 72° from their neighbours.
+
+speakers-fivepoint-c:
+
+	This has the front are rear speakers placed the same as for the
+quadraphonic configuration with the addition of the front speaker.
+
+speakers-fivepoint-d:
+
+	This has the speakers each placed 60° from their neighbours.  The
+speakers would be placed evenly around the listener in this configuration
+if there was a single rear speaker.
+
+speakers-sevenpoint-a:
+
+	I have no idea what the correct placement for 7.1 systems is.  This
+is with the front three speakers placed the same as the 5.1 setup.  The
+side speakers are placed 90° from the front.  And the rear are placed at
+60° from their neighbours.  The end result is a configuration where
+everything would be placed evenly around the listener if you take away the
+front speaker.
+	
+speakers-sevenpoint-b:
+
+	This is the seven speakers placed evenly around the listener.
+This has them all at some funny angle from their neighbours.
+
+speakers-sevenpoint-c:
+
+	This has the front and rear speakers placed the same as for the 
+quadraphonic configuration.  And the side speakers are placed 90° from the
+front.  The speakers would be placed evenly around the listener in this
+configuration with the addition of a rear center speaker.
