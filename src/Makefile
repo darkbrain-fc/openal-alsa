@@ -16,13 +16,13 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 SONAME = libopenal.so.0
-SUFFIX = 2.0 
+SUFFIX = 2.0
 
 LIB=$(SONAME).$(SUFFIX)
 PIC=-fPIC
 
 CC=gcc
-CFLAGS=-Os -Wall -W -m32 -Wmissing-prototypes -pedantic $(PIC) 
+CFLAGS=-Os -Wall -W -m64 -Wmissing-prototypes -pedantic $(PIC)
 LIBS=-lasound -lpthread -lm
 SHARED=-shared -Wl,-soname,$(SONAME)
 CPPFLAGS=-I../include
